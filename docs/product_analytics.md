@@ -70,4 +70,4 @@ These are the types of product-focused questions that commercial analytics users
 - "Show me the year-over-year growth rate for each NovaPharma product"
 - "Which products are trending up in pack units over the last 3 months?"
 - "What is the rolling 3-month average volume for Paxelium?"
-- "Compare Q1 2025 vs Q1 2024 for all oncology products"
+- "Compare Q1 2026 vs Q1 2025 for all oncology products"

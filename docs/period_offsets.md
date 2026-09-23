@@ -12,13 +12,13 @@ Offsets are relative to the current data refresh date (not `CURRENT_DATE`), whic
 - `0` = the current (most recent) week
 - `1` = last week
 - `2` = two weeks ago
-- Up to `51` for a full year of history
+- Up to `155` for ~3 years of history
 
 ### `mo_offset` — Month Offset
 - `0` = current month
 - `1` = last month (most recently completed full month)
 - `2` = two months ago
-- Up to `12` for a full year of history
+- Up to `35` for ~3 years of history
 
 ## Common Time Windows
 
@@ -36,9 +36,9 @@ Offsets are relative to the current data refresh date (not `CURRENT_DATE`), whic
 
 These columns provide human-readable labels for grouping:
 
-- `period_wk` — format `YYYY-WNN` (e.g., `2025-W38`)
-- `period_mo` — format `YYYY-MM` (e.g., `2025-09`)
-- `period_qtr` — format `YYYY-QN` (e.g., `2025-Q3`)
+- `period_wk` — format `YYYY-WNN` (e.g., `2026-W38`)
+- `period_mo` — format `YYYY-MM` (e.g., `2026-09`)
+- `period_qtr` — format `YYYY-QN` (e.g., `2026-Q3`)
 
 Use these for GROUP BY when showing trends over time.
 
@@ -72,6 +72,6 @@ ORDER BY period_mo
 ```sql
 SELECT period_qtr, SUM(wac) as revenue
 FROM sales
-WHERE data_source = 'distributor' AND brand_flag = 1 AND period_qtr IN ('2025-Q3', '2025-Q2')
+WHERE data_source = 'distributor' AND brand_flag = 1 AND period_qtr IN ('2026-Q3', '2026-Q2')
 GROUP BY period_qtr
 ```

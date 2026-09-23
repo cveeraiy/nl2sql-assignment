@@ -80,17 +80,17 @@ The system must enforce role-based access control. The `users` table (see `schem
 
 See `docs/security_model.md` for the full access control specification.
 
-### 5. AWS Deployment
+### 5. Cloud Deployment
 
-Deploy the full solution to **AWS** so that we can access it via a URL. The deployed application must be fully functional — chat UI, backend, database, domain knowledge pipeline — all running in the cloud.
+Deploy the full solution to a **cloud provider** so that we can access it via a public URL. The deployed application must be fully functional — chat UI, backend, database, domain knowledge pipeline — all running in the cloud.
 
-You choose the AWS services. Some options to consider (not prescriptive):
+You choose the cloud provider and services. **AWS is preferred**, but GCP, Azure, or other cloud platforms are acceptable. Some AWS options to consider (not prescriptive):
 - **Compute**: EC2, ECS/Fargate, Lambda, App Runner, Elastic Beanstalk
-- **Database**: RDS, Aurora, DynamoDB, or SQLite on EBS/EFS
+- **Database**: RDS, Aurora, or SQLite on EBS/EFS
 - **Frontend**: S3 + CloudFront, Amplify, or served from the backend
 - **Other**: Bedrock for LLM, OpenSearch for vector search, etc.
 
-Include infrastructure setup instructions or IaC (Terraform, CDK, CloudFormation, etc.) in your repo.
+Include infrastructure setup instructions or IaC (Terraform, CDK, CloudFormation, Pulumi, etc.) in your repo.
 
 ## What We're Looking For
 
@@ -106,21 +106,21 @@ Include infrastructure setup instructions or IaC (Terraform, CDK, CloudFormation
 
 - Use any LLM provider (OpenAI, Anthropic, AWS Bedrock, open-source, etc.)
 - Use any SQL database (NoSQL is out of scope)
-- Must be deployed to AWS and accessible via a public URL
+- Must be deployed to a cloud provider (AWS preferred) and accessible via a public URL
 - Solution must be shared as a **GitHub repository**
 - Include a `DESIGN.md` explaining your approach
 
 ## Deliverables
 
 1. **GitHub repository** — all source code, IaC, and documentation
-2. **Live URL** — the deployed chat application on AWS
+2. **Live URL** — the deployed chat application in the cloud
 3. **`DESIGN.md`** — covering:
    - Architecture overview (diagram encouraged)
    - Database choice and rationale
    - How domain knowledge is integrated
    - LLM provider and prompt design
    - Security implementation — how access control is enforced (auth, query scoping, WAC restriction)
-   - AWS services used and why
+   - Cloud services used and why
    - Trade-offs made and what you'd improve with more time
 4. **Test cases & results** — a document or test suite covering:
    - NL-to-SQL accuracy: sample questions, generated SQL, expected vs actual results
